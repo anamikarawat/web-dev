@@ -41,6 +41,7 @@ function multiply(c , d){
  
  let substract = (function(a,b){
         return a-b;
+       // console.log(a-b);
  })(20 , 10)
  
  console.log(substract)
