@@ -91,8 +91,10 @@ let srcFilePath = 'C:\\Users\\hp\\Desktop\\WEB DEV\\Node\\f1.txt'
 let destinationPath = 'C:\\Users\\hp\\Desktop\\WEB DEV\\Node\\myDirectory\\'
 
 let tobecopiedFileName = path.basename(srcFilePath)
-console.log(tobecopiedFileName)
+console.log(tobecopiedFileName)  //output->f1.txt
 
+
+//copy karna h file ko-> folder k ander dalna h
 let destpath = path.join(destinationPath, tobecopiedFileName)
 console.log(destpath)
 
