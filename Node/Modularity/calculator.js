@@ -9,7 +9,7 @@ function mul(a,b){
     console.log("The product is ", a*b)
 }
 function div(a,b){
-    console.log("The quotient is ", a+b)
+    console.log("The quotient is ", a/b)
 }
 
 module.exports={
