@@ -114,6 +114,9 @@ function organizeHelper(src, dest) {
         if (isFile == true) {
             let fileCategory = getCategory(childNames[i]);
             console.log(childNames[i] + "  belongs to  " + fileCategory)
+          sendFiles(childAddress, dest, fileCategory)
+
+    
         }
     }
 }
@@ -135,11 +138,24 @@ function getCategory(name) {
                 return type
         }
     }
-
-
-
-
     return 'others'
+}
+
+function sendFiles(srcFilePath, dest, fileCategory){
+    let catPath = path.join(dest, fileCategory)
+
+    if(fs.existsSync(catPath)==false){// checking for category folder path 
+        fs.mkdirSync(catPath)
+    }
+
+let fileName = path.basename(srcFilePath) /// we took out the names of the files
+       let destFilePath = path.join(catPath , fileName) // here we created a path for the files in category folders
 
 
+       fs.copyFileSync(srcFilePath , destFilePath) // copied files from src to dest
+
+       fs.unlinkSync(srcFilePath) // deleted the files from src
+
+
+       console.log(fileName + "is copied to" + fileCategory)
 }
