@@ -15,25 +15,25 @@ let types = {
     media: ["mp4", "mkv", "mp3"],
     archives: ["zip", "7z", "rar", "tar", "gz", "ar", "iso", "xz"],
     documents: [
-      "docx",
-      "doc",
-      "pdf",
-      "xlsx",
-      "xls",
-      "odt",
-      "ods",
-      "odp",
-      "odg",
-      "odf",
-      "txt",
-      "ps",
-      "tex",
+        "docx",
+        "doc",
+        "pdf",
+        "xlsx",
+        "xls",
+        "odt",
+        "ods",
+        "odp",
+        "odg",
+        "odf",
+        "txt",
+        "ps",
+        "tex",
     ],
     app: ["exe", "dmg", "pkg", "deb"],
-  };
-  
-  //[Node FO.js tree folderpath]
-  
+};
+
+//[Node FO.js tree folderpath]
+
 
 let command = inputArr[0];
 
@@ -86,7 +86,7 @@ function organizeFn(dirpath) {
 
         if (doesExist == true) {
             destPath = path.join(dirpath, 'organized_files')
-           // C:\Users\hp\Desktop\WEB DEV\test folder\organized_files       -->dirpath--> I want to create a folder in this path
+            // C:\Users\hp\Desktop\WEB DEV\test folder\organized_files       -->dirpath--> I want to create a folder in this path
             if (fs.existsSync(destPath) == false) {
 
                 fs.mkdirSync(destPath)// we will only create a folder if it does not already exists
@@ -102,24 +102,44 @@ function organizeFn(dirpath) {
     organizeHelper(dirpath, destPath)
 }
 //we are writting this function to categorize our files
-function organizeHelper(src, dest){
+function organizeHelper(src, dest) {
     let childNames = fs.readdirSync(src) //get all the files and folder inside your src
     //console.log(childNames)
-    for(let i=0; i<childNames.length; i++){
+    for (let i = 0; i < childNames.length; i++) {
 
-        let childAddress = path.join(src , childNames[i])// path is identified for the files
+        let childAddress = path.join(src, childNames[i])// path is identified for the files
         let isFile = fs.lstatSync(childAddress).isFile()// we check here to identify only the files
-      //  console.log(childAddress + " " + isFile)
+        //  console.log(childAddress + " " + isFile)
 
-        if(isFile==true){
-            let fileCategory = getCategory(childNames[i])
-          }
-   }
+        if (isFile == true) {
+            let fileCategory = getCategory(childNames[i]);
+            console.log(childNames[i] + "  belongs to  " + fileCategory)
+        }
+    }
 }
 
 
-function getCategory(name){
-       let ext = path.extname(name)
-       ext = ext.slice(1)
-       console.log(ext)
+function getCategory(name) {
+    let ext = path.extname(name)
+    ext = ext.slice(1)//we will take out the extension names of the files
+    //console.log(ext)
+
+    for (let type in types) {
+        let cTypeArr = types[type]//cTypeArr= category type array
+        //console.log(cTypeArr)
+
+        for (let i = 0; i < cTypeArr.length; i++) {
+            if (ext == cTypeArr[i])
+                // we matched the extensions with the values presnet in ctypeArr
+
+                return type
+        }
+    }
+
+
+
+
+    return 'others'
+
+
 }
