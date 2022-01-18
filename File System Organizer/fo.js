@@ -11,7 +11,29 @@ const path = require("path/posix");
 
 let inputArr = process.argv.slice(2);
 
-//[Node FO.js tree folderpath]
+let types = {
+    media: ["mp4", "mkv", "mp3"],
+    archives: ["zip", "7z", "rar", "tar", "gz", "ar", "iso", "xz"],
+    documents: [
+      "docx",
+      "doc",
+      "pdf",
+      "xlsx",
+      "xls",
+      "odt",
+      "ods",
+      "odp",
+      "odg",
+      "odf",
+      "txt",
+      "ps",
+      "tex",
+    ],
+    app: ["exe", "dmg", "pkg", "deb"],
+  };
+  
+  //[Node FO.js tree folderpath]
+  
 
 let command = inputArr[0];
 
@@ -53,7 +75,7 @@ function helpfn() {
 }
 
 function organizeFn(dirpath) {
-    let destPath
+    let destPath // input of a directory Path
 
     if (dirpath == undefined) {
         console.log("Please Enter a valid Directory Path");  //check whether dirpath is passed or not
@@ -77,4 +99,27 @@ function organizeFn(dirpath) {
         }
 
     }
+    organizeHelper(dirpath, destPath)
+}
+//we are writting this function to categorize our files
+function organizeHelper(src, dest){
+    let childNames = fs.readdirSync(src) //get all the files and folder inside your src
+    //console.log(childNames)
+    for(let i=0; i<childNames.length; i++){
+
+        let childAddress = path.join(src , childNames[i])// path is identified for the files
+        let isFile = fs.lstatSync(childAddress).isFile()// we check here to identify only the files
+      //  console.log(childAddress + " " + isFile)
+
+        if(isFile==true){
+            let fileCategory = getCategory(childNames[i])
+          }
+   }
+}
+
+
+function getCategory(name){
+       let ext = path.extname(name)
+       ext = ext.slice(1)
+       console.log(ext)
 }
