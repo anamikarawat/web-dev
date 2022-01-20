@@ -116,3 +116,7 @@ module.exports={
 
    organizeKey:organizeFn
 }
+
+
+//to run organize - 1st make a Name.txt file inside test folder then type the command - node fo.js organize 'C:\Users\hp\Desktop\WEB DEV\test folder'
+
