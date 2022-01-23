@@ -1,18 +1,20 @@
+//Execution Context-The environment where JS code is Executed and evaluated
+//Global Execution Context- by default JS gives us execution context which is known as GEC in which the whole code will reside
 
 
-// var a =2
-// var b =3
+var a =2
+var b =3
 
-// function add(m,n){
-//     var sum = m+n
-//     return sum
-// }
+function add(m,n){
+    var sum = m+n
+    return sum
+}
 
-// var sum1 = add(1,2);
-// var sum2 = add(a,b);
+var sum1 = add(1,2);
+var sum2 = add(a,b);
 
-// console.log(sum1);
-// console.log(sum2);
+console.log(sum1);
+console.log(sum2);
 
 ////==========================================================
 var n=2
@@ -34,3 +36,12 @@ console.log(square2);
 // then the local execution context is created
 // then the local execution context is destroyed
 // then the global execution context is destroyed
+
+
+
+
+
+
+
+
+

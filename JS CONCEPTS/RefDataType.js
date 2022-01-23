@@ -9,26 +9,32 @@ let obj = {
 console.log(obj, typeof(obj))
 
 // func ke liye object ni de reha hai,
-function greet(name) {
-  console.log("Hello", name);
+function greet() {
+  console.log("Hello");
 }
 console.log(greet, typeof(greet))
+
+
 //==================================================================
 
-let firstPerson = "Hitesh";
-let secondPerson = firstPerson; // copy
-firstPerson = "Arshad"; // change
-console.log(firstPerson, secondPerson); // Arshad Hitesh
+// let firstPerson = "Hitesh";
+// let secondPerson = firstPerson; // copy
+// firstPerson = "Arshad"; // change
+// console.log(firstPerson, secondPerson); // Arshad Hitesh
 //=============================================================
 
 let firstPerson ={
     name : 'Anamika',
     age: 20
 }
-
 let secondPerson = firstPerson;
-firstPerson.name= 'rawat';
+// console.log(firstPerson)    //Anamika
+// console.log(secondPerson)  //Anamika
 
-console.log(firstPerson)
-console.log(secondPerson)
+firstPerson.name= 'rawat';
+//secondPerson.name = 'RAWAT';
+
+
+console.log(firstPerson) //rawat
+console.log(secondPerson)  //rawat
 //memory location me manuplation
