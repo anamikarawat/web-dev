@@ -40,12 +40,12 @@ console.log("after")
 
 console.log("before")
 
-fs.readFile("f1.txt" , cb)
+fs.readFile("f1.txt" , cb)//this callback(cb) function will execute in last.
 fs.readFile("f2.txt" , cb2)
-//readFile ->used for async way
+//readFile ->used for async way and it is async function
 
 function cb(err , data){
-    //agar file read nhi hui tph error ayega verna data ayega
+    //agar file read nhi hui toh error ayega verna data ayega
    //error first callbacks- those callbacks in which first we deal with the errors
    if(err){
        console.log(err)
