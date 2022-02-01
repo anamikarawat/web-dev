@@ -15,7 +15,7 @@ let evenNoArr = arr.filter(function(n){
 
 console.log(evenNoArr)
 
-//=============================================================================
+//============================================================
 const transactions = [1000, 3000, 4000, 2000, -898, 3800, -4500];
 let profitArr = transactions.filter(function (n) {
     if (n > 0) {
@@ -25,14 +25,4 @@ let profitArr = transactions.filter(function (n) {
 })
 console.log(transactions)
 console.log(profitArr)
-
-//=================================================================================
-
-
-
-
-
-
-
-
 
