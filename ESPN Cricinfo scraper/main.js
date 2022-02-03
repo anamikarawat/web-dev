@@ -15,7 +15,7 @@ function cb(error, response, html) {
         // console.log(html)
     }
 }
-//view all results- ek anchor tag h which have href hoga usmea site ka link
+//view all results link- ek anchor tag h which have href hoga usmea site ka link
 function extractLink(html) {
     let $ = cheerio.load(html)
     //half link
@@ -57,3 +57,6 @@ function extractAllLink(html) {
     }
 
 }
+
+
+//score table for one particular match
