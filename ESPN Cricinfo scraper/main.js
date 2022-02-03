@@ -18,5 +18,13 @@ function cb(error, response, html) {
 //view all results- ek anchor tag h which have href hoga usmea site ka link
 function extractLink(html){
     let $ = cheerio.load(html)
+    //half link
     let anchorElem = $('a[data-hover="View All Results"]')
+    let link = anchorElem.attr('href')
+    //attr - attributes
+    //console.log(link)
+
+    //full link- concatination
+    let fullLink = "https://www.espncricinfo.com/" + link;
+    console.log(fullLink);
 }
