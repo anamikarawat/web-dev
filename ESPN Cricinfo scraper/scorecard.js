@@ -4,6 +4,9 @@
 //for only one match/ one score card
 const request = require('request')
 const cheerio = require('cheerio')
+const fs = require('fs')
+const path = require('path')
+
 
 function processScoreCrad(url) {
     request(url, cb);
@@ -82,8 +85,22 @@ function extractData(html) {
                 let sixes = $(allCols[6]).text().trim()
                 let STR = $(allCols[7]).text().trim()
 
-                console.log(`${playerName} | ${runs} |${balls} | ${fours} | ${sixes} | ${STR}`)
+                console.log(`${playerName} | ${runs} |${balls} | ${fours} | ${sixes} | ${STR}`
+                );
                 //template literal-> ${ } , do not need cancatination plus sign
+                processPlayer(
+                    teamName,
+                    opponentName,
+                    playerName,
+                    runs,
+                    balls,
+                    fours,
+                    sixes,
+                    STR,
+                    venue,
+                    date,
+                    result
+                );
             }
 
         }
@@ -93,6 +110,35 @@ function extractData(html) {
     }
     //console.log(htmlString)
 
+}
+
+function processPlayer(
+    teamName,
+    opponentName,
+    playerName,
+    runs,
+    balls,
+    fours,
+    sixes,
+    STR,
+    venue,
+    date,
+    result
+) {
+    let teamPath = path.join(__dirname, "IPL", teamName);
+    dirCreator(teamPath);
+
+
+
+
+}
+
+
+
+function dirCreator(folderPath) {
+    if (fs.existsSync(folderPath) == false) {
+        fs.mkdirSync(folderPath);
+    }
 }
 
 module.exports = {

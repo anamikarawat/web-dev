@@ -58,7 +58,7 @@ let stringData = JSON.stringify(jsonFile)
 
 
 fs.writeFileSync("example.json", stringData)
-
+// writing to json file
 console.log('JSON file Updated')
 
 
@@ -75,7 +75,7 @@ xlsx.utils.book_append_sheet(newWB, newWS, 'Avengers');
 //xlsx.writeFile(newWB, fileName);
 xlsx.writeFile(newWB, 'abc.xlsx');
 
-
+//===============================================================================================
 
 //let wb = xlsx.readFile(filePath);
 let wb = xlsx.readFile('abc.xlsx');
@@ -84,11 +84,4 @@ let wb = xlsx.readFile('abc.xlsx');
 let excelData = wb.Sheets['Avengers'];
 let ans = xlsx.utils.sheet_to_json(excelData);
 console.log(ans)
-
-
-
-
-
-
-
 
