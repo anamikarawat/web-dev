@@ -58,50 +58,6 @@
             "city": "Delhi",
             "state": "New Delhi"
         }
-    },
-    {
-        "name": "Thor",
-        "last name": "odinson",
-        "isAvenger": true,
-        "friends": [
-            "Tony",
-            "Steve",
-            "Bruce"
-        ],
-        "age": 20,
-        "address": {
-            "city": "Delhi",
-            "state": "New Delhi"
-        }
-    },
-    {
-        "name": "Thor",
-        "last name": "odinson",
-        "isAvenger": true,
-        "friends": [
-            "Tony",
-            "Steve",
-            "Bruce"
-        ],
-        "age": 20,
-        "address": {
-            "city": "Delhi",
-            "state": "New Delhi"
-        }
-    },
-    {
-        "name": "Thor",
-        "last name": "odinson",
-        "isAvenger": true,
-        "friends": [
-            "Tony",
-            "Steve",
-            "Bruce"
-        ],
-        "age": 20,
-        "address": {
-            "city": "Delhi",
-            "state": "New Delhi"
-        }
     }
+    
 ]
