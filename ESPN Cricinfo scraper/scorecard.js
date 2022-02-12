@@ -7,6 +7,7 @@ const cheerio = require('cheerio')
 const fs = require('fs')
 const path = require('path')
 
+const xlsx = require('xlsx')
 
 function processScoreCrad(url) {
     request(url, cb);
@@ -129,8 +130,33 @@ function processPlayer(
     dirCreator(teamPath);
 
 
+    let filePath = path.join(teamPath, playerName + ".xlsx");
+
+    let content = excelReader(filePath, playerName);//[] empty array ajaega
 
 
+    let playerObj = {
+        // "teamName" : teamName,
+        //  "playerName" : playerName,
+
+        // essea bhi bhej sakte or vese bhi
+
+        playerName,
+        teamName,
+        opponentName,
+        runs,
+        balls,
+        fours,
+        sixes,
+        STR,
+        venue,
+        date,
+        result,
+    };
+
+    content.push(playerObj)
+
+    excelWriter(filePath, playerName, content)
 }
 
 
@@ -139,6 +165,26 @@ function dirCreator(folderPath) {
     if (fs.existsSync(folderPath) == false) {
         fs.mkdirSync(folderPath);
     }
+}
+
+function excelWriter(fileName, sheetName, jsonData) {
+    let newWB = xlsx.utils.book_new();
+    // Creating a new WorkBook
+    let newWS = xlsx.utils.json_to_sheet(jsonData);
+    // Json is converted to sheet format (rows and cols)
+    xlsx.utils.book_append_sheet(newWB, newWS, sheetName);
+    xlsx.writeFile(newWB, fileName);
+}
+
+function excelReader(fileName, sheetName) {
+    if (fs.existsSync(fileName) == false) {//agar file exist nhi karti toh mea ek empty array return kardunga
+        return [];
+    }
+    let wb = xlsx.readFile(fileName);
+
+    let excelData = wb.Sheets[sheetName];
+    let ans = xlsx.utils.sheet_to_json(excelData);
+    return ans
 }
 
 module.exports = {
