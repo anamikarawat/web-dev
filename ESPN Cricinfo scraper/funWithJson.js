@@ -5,9 +5,12 @@ const xlsx = require('xlsx')
 
 // //console.log(buffer)
 
-// let data = JSON.parse(buffer)
+// let data = JSON.parse(buffer)// This methods is used to covert buffer or any type of  data to json
 
-// data.push({
+// //console.log(data)
+
+////data is  a array of object
+// data.push({                   //push to insert data
 //     "name": "Thor",
 //     "last name": "odinson",
 //     "isAvenger": true,
@@ -24,14 +27,14 @@ const xlsx = require('xlsx')
 // })
 
 
-//console.log(data)
+////console.log(data)
 
-//let stringData = JSON.stringify(data)
+//let stringData = JSON.stringify(data)  //convert data into string
 //console.log(stringData)
 ////////////////////////////////////////////////////////////////////
-//2nd method
+//2nd method-jsonFile
 
-let jsonFile = require('./example.json')
+let jsonFile = require('./example.json')// requiring JSON File
 
 jsonFile.push({
     "name": "Thor",
@@ -46,26 +49,22 @@ jsonFile.push({
     "address": {
         "city": "Delhi",
         "state": "New Delhi"
-    }
-})
-
-
-
-
-
+    },
+});
+// pushing a new object into JSON File
 let stringData = JSON.stringify(jsonFile)
-
-
+// converting json data into string so that we can write it in other files
+//======================================================================================
 
 fs.writeFileSync("example.json", stringData)
 // writing to json file
 console.log('JSON file Updated')
-
-
-
+//=========================================================================
+//convert/write json data into xlsx sheet
 let newWB = xlsx.utils.book_new();
 //creating a new workbook
 
+//let newWS = xlsx.utils.json_to_sheet(json);
 let newWS = xlsx.utils.json_to_sheet(jsonFile);
 //Json is converted to sheet format (rows and column)
 
@@ -76,6 +75,7 @@ xlsx.utils.book_append_sheet(newWB, newWS, 'Avengers');
 xlsx.writeFile(newWB, 'abc.xlsx');
 
 //===============================================================================================
+//convert xlsx sheet data into Read file in JSON format
 
 //let wb = xlsx.readFile(filePath);
 let wb = xlsx.readFile('abc.xlsx');
