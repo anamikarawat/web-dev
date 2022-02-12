@@ -11,7 +11,7 @@ const allMatchObj = require("./allMatch");
 
 
 let iplPath = path.join(__dirname , "IPL")
-
+//__dirname-> jo hamari current directory hai uska path leke ajata h == parent direcorty Path-> ESPN cricinfo scraper
 
 function dirCreator(filePath){
   if(fs.existsSync(filePath)==false){
@@ -19,7 +19,7 @@ function dirCreator(filePath){
   }
 }
 
-//console.log(__dirname) // parent direcorty Path
+//console.log(__dirname) // parent direcorty Path-> ESPN cricinfo scraper
 
 dirCreator(iplPath)
 
