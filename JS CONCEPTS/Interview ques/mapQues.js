@@ -16,6 +16,18 @@ const products = [
 
 //=================================================
 //sol-2
+// let productAbove100 = products.map(function(product){
+//     return product.price
+// })
+
+
+// let productAbove100 = products.map(function(product){
+//     return product.price
+// }).filter(function(price){
+//     return price >= 100
+// })
+
+
 let productAbove100 = products.map(function(product){
     return product.price
 }).filter(function(price){
@@ -23,4 +35,11 @@ let productAbove100 = products.map(function(product){
 }).length
 //length for-> find number of product=2
 console.log(productAbove100)
+
+
+
+
+
+
+
 
