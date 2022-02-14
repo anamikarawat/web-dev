@@ -23,3 +23,12 @@ let studentName = studentRecords.filter(function(student){
     return student.marks>=50 && student.id>120
 })
 console.log(studentName)
+
+
+
+
+
+
+
+
+
