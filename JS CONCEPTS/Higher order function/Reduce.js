@@ -1,6 +1,7 @@
-const arr = [2, 3, 4, 5, 6]
 
-//need revision in this part -10:10
+// * Reduces all the elments in an array into a single value.
+
+const arr = [2, 3, 4, 5, 6]
 
 // let addition = arr.reduce(function(sum, value){
 

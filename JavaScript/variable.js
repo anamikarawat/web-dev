@@ -117,7 +117,15 @@ const a = 'I am a string' // redcalrtion is not allowed
 a = 30 // reassignment is not allowed
 
 
+//==============================================
+// const a;
 
+// var b;
+// let c;
+
+// //console.log(a)
+// console.log(b)
+// console.log(c)
 
 
 
