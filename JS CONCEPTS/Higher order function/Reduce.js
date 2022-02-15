@@ -28,16 +28,4 @@ let product = arr.reduce(function(multiply, value){
 console.log(product)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+//t.me/+EbBrL8gl-RZmNjZl                  telegram group
