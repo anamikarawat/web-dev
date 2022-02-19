@@ -5,28 +5,28 @@
 
 //global -
 
-// console.log(this) 
+console.log(this) //- empty obj
+
+//inside a function
+function f(){
+       console.log(this)
+}
+
+f()//undefined
+
+//function inside object
+let obj = {
+       name : 'Rahul',
+
+       f: function(){
+              console.log(this)
+       }
+}
+
+obj.f()//return obj itself
 
 
-// function f(){
-//        console.log(this)
-// }
-
-// f()
-
-
-// let obj = {
-//        name : 'Rahul',
-
-//        f: function(){
-//               console.log(this)
-//        }
-// }
-
-// obj.f()
-
-
-
+//obj-function-function
 let obj2 = {
        name :'Mrinal',
 
@@ -40,4 +40,4 @@ let obj2 = {
 }
 
 
-obj2.f()
+obj2.f()//return undefined

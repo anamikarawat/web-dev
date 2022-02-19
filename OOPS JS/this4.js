@@ -1,16 +1,16 @@
-'use strict'
-//browser-> strict mode
+//browser->non strict mode
+
 console.log(this) // window Object
 
-
+//inside a function
 function f(){
        console.log(this)
 }
 
-f()//undefined
+f()//return window obj
 
 
-
+//function inside object
 let obj = {
        f: function(){
               console.log(this)
@@ -19,7 +19,7 @@ let obj = {
 
 obj.f()//object itself
 
-
+//function-function inside object
 let obj = {
        f: function(){
               function g(){
@@ -29,4 +29,4 @@ let obj = {
        }
 }
 
-obj.f()// return window object
+obj.f()//window object
