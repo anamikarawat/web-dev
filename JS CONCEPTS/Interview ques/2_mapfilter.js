@@ -24,11 +24,3 @@ let studentName = studentRecords.filter(function(student){
 })
 console.log(studentName)
 
-
-
-
-
-
-
-
-
