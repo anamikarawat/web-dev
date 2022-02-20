@@ -6,6 +6,12 @@ let f2p = fs.promises.readFile("f2.txt");
 
 let f3p = fs.promises.readFile("f3.txt");
 
+//it gives promise pending
+// console.log(f1p)
+// console.log(f2p)
+// console.log(f3p)
+
+//we write function(cb) globally
 function cb(data) {
   console.log("File Data -> " + data);
 }
