@@ -4,35 +4,32 @@
 
 // })
 
-// let promise = new Promise(function (reslove, reject) {
+let promise = new Promise(function (reslove, reject) {
 
-//     const a = 2;
-//     const b = 4;
+    const a = 2;
+    const b = 4;
 
-//     if (a === b) {
-//         resolve();
-//     } else {
-//         reject();
-//     }
-// });
+    if (a === b) {
+        resolve();
+    } else {
+        reject();
+    }
+});
 
-// promise
-//     .then(function () {
-//         console.log("Equal");
-//     })
-//     .catch(function () {
-//         console.log("Error/ Not Equal");
-//     });
+promise.then(function () {
+    console.log("Equal");
+})
 
 
-// promise.catch(function () {
-//     console.log("Error Not Equal");
-// });
+
+promise.catch(function () {
+    console.log("Error Not Equal");
+})
 
 //=================================================================
 let promise = new Promise(function (resolve, reject) {
     const a = 4;
-    const b = 4;
+    const b = 2;
 
     if (a === b) {
         resolve('Yes they are Equal');
@@ -42,15 +39,9 @@ let promise = new Promise(function (resolve, reject) {
 });
 
 promise
-    .then(function (data) {
+    .then(function (data){
         console.log('result coming from Resolve Method->' + data);
     })
     .catch(function (err) {
         console.log('result coming from Reject Method->' + err);
     });
-
-
-
-
-
-    
