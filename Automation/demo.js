@@ -5,7 +5,7 @@ console.log('Before')
 let browserWillbeLauncedPromise = puppeteer.launch({
        headless:false,
        defaultViewport:null,
-       rgs: ['--start-maximized']
+       args: ['--start-maximized']
 })
 
 browserWillbeLauncedPromise.then(function(browserInstance){
