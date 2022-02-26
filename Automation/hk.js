@@ -2,7 +2,6 @@ const loginLink = "https://www.hackerrank.com/auth/login";
 
 let email = "fesagom584@chatich.com";
 let password = "pepcoding123";
-
 let puppeteer = require("puppeteer");
 
 console.log("Before");
@@ -46,6 +45,46 @@ browserWillbeLauncedPromise
       delay: 100,
     });
     return loginPromise;
+  }).then(function () {
+    let algoWillBeclickedPromise = waitAndClick('.topic-card a[data-attr1="algorithms"]', page)
+    return algoWillBeclickedPromise;
+  }).then(function () {
+    let getToWarmupPromise = waitAndClick('input[value="warmup"]', page);
+    return getToWarmupPromise;
+  })
+  .then(function () {
+    let ChallengesArrPromise = page.$$(
+      ".ui-btn.ui-btn-normal.primary-cta.ui-btn-line-primary.ui-btn-styled",
+      { delay: 100 }
+    );
+
+    return ChallengesArrPromise;
+  })
+  .then(function (questionsArr) {
+    console.log("No of Questions" + questionsArr.length);
   });
+
+function waitAndClick(selector, cPage) {
+  return new Promise(function (resolve, reject) {
+    let waitForModalPromise = cPage.waitForSelector(selector);
+    waitForModalPromise.then(function () {
+      let clickModalPromise = cPage.click(selector, { delay: 100 })
+      return clickModalPromise
+    }).then(function () {
+      resolve()
+    }).catch(function () {
+      reject()
+    })
+  })
+}
+
+
+
+
+
+
+
+
+
 
 console.log("After");
