@@ -4,7 +4,7 @@
 
 // })
 
-let promise = new Promise(function (reslove, reject) {
+let promise = new Promise(function (resolve, reject) {
 
     const a = 2;
     const b = 4;
