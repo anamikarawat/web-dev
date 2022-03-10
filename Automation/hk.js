@@ -139,8 +139,8 @@ function questionSolver(page, question, answer) {
       //  })
       .then(function () {
         resolve()
-      }).catch(function (err) {
-        console.log(err)
+      }).catch(function () {
+        reject()
       })
   });
 }
