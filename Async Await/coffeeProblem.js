@@ -8,25 +8,25 @@ function placeOrder(drink) {
     });
   }
   
-  function processOrder(order) {
+  function processOrder(order) {//order = order for coffee
     return new Promise(function (resolve) {
       console.log("Order is being Processed");
       resolve(`${order} Served`);
       // resolve(`order  Served`);
     });
   }
-  // --> Promisified Solution
-  // placeOrder("coffee")
-  //   .then(function (demand) {
-  //     console.log(demand);
-  //     let orderIsProccesed = processOrder(demand);
-  //     return orderIsProccesed;
-  //   })
-  //   .then(function (orderServed) {
-  //     console.log(orderServed);
-  //   }).catch(function(err){
-  //          console.log(err)
-  //   });
+  //--> Promisified Solution
+  placeOrder("coffee")
+    .then(function (demand) { //demand=order for coffee
+      console.log(demand);
+      let orderIsProccesed = processOrder(demand);
+      return orderIsProccesed;
+    })
+    .then(function (orderServed) {
+      console.log(orderServed);
+    }).catch(function(err){
+           console.log(err)
+    });
 
 // Aysnc Await Solution - >
 
