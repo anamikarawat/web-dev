@@ -63,7 +63,7 @@
 
       let cards = document.querySelectorAll('.card')
 
-      for(let i=0 ; i<cards.length; i++){
+      for(let i=0 ; i<cards.length; i++){//node list
           cards[i].addEventListener('dblclick' , function(e){
                  let classTobeAttached = e.currentTarget.getAttribute('data-color')
                  e.currentTarget.setAttribute('data-color' , 'used')
